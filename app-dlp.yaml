@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bkacad-app
+  labels:
+    app: bkacad-app
+spec:
+  selector:
+    matchLabels:
+      app: bkacad-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bkacad-app
+    spec:
+      containers:
+      - name: bkacad-app
+        image: kiettran164/vprofileapp:v1
+        ports:
+          - name: app-port
+            containerPort: 8080

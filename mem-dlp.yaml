@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  bkacad-memcached01
+  labels:
+    app:  bkacad-memcached01
+spec:
+  selector:
+    matchLabels:
+      app: bkacad-memcached01
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  bkacad-memcached01
+    spec:
+      containers:
+      - name:  bkacad-memcached01
+        image:  memcached
+        ports:
+          - name: mem-port
+            containerPort: 11211

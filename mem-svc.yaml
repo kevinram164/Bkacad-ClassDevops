@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bkacad-memcached01
+spec:
+  ports:
+    - port: 11211
+      targetPort: mem-port
+      protocol: TCP
+  selector:
+    app: bkacad-memcached01
+  type: ClusterIP

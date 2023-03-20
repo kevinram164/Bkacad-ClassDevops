@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bkacad-db01
+spec:
+  ports:
+    - port: 3306
+      targetPort: db01-port
+      protocol: TCP
+  selector:
+    app: bkacad-db01
+  type: ClusterIP
